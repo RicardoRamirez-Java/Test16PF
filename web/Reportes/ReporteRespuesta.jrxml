@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="320" pageHeight="842" columnWidth="280" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b2c28384-9938-44f7-b772-b09f5475ae73">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
+	<parameter name="codigo_test" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  t.fecha,u.usuario,u.nombre,d.codigo_pregunta,d.respuesta
+from testrealizados as t inner join usuarios as u on t.codigo_usuario=u.codigo_usuario
+inner join detalletest as d on t.codigo_test=d.codigo_test
+where t.codigo_test =$P{codigo_test}]]>
+	</queryString>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="usuario" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="codigo_pregunta" class="java.lang.Integer"/>
+	<field name="respuesta" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="320" height="92" backcolor="#006699" uuid="11d887ef-5d87-411b-ab35-4d4c01cfdf04"/>
+				<staticText>
+					<reportElement x="20" y="0" width="190" height="43" forecolor="#FFFFFF" uuid="20408137-025f-46fd-83f9-d388ca77ed58"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TEST 16PF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="24" y="43" width="186" height="20" forecolor="#FFFFFF" uuid="a31b4cdb-1aac-4482-9581-e7c8a24567af"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Detalle de Respuestas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="64" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="95540078-6990-49d3-b480-9930f2b2808c"/>
+				<textElement textAlignment="Left">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="dd/MM/yy">
+				<reportElement mode="Transparent" x="64" y="0" width="111" height="20" uuid="bb18486c-7b98-4230-badb-13f07434ffc7"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="20" width="64" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="381aee7e-01d6-4a51-b578-bb3f6df694c3"/>
+				<textElement textAlignment="Left">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="64" y="20" width="111" height="20" uuid="44a21b50-c230-4f06-afc4-cdf91bd17a8c"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="40" width="64" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e8fb3e3b-eed5-4415-8b75-b8171c66c1f2"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="13" isBold="true" isItalic="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="64" y="40" width="111" height="20" uuid="f9c091cf-9f15-406f-9020-140616f1669e"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23">
+			<line>
+				<reportElement x="-20" y="22" width="320" height="1" forecolor="#666666" uuid="dd245109-9fa4-4113-bcbc-6252a90e6b27"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="1" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5a810263-8116-4c98-953b-a03da2cd2d4a"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Pregunta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="174" y="1" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3666f6d2-c015-4af4-ae7e-93b5250cfef2"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Respuesta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="280" height="1" uuid="7d16c246-dce4-4c0a-95f2-89a99cd7c15c"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="80" height="20" uuid="c949314d-28cd-46ac-96c6-578082d20816"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_pregunta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="175" y="0" width="74" height="20" uuid="4f18ca07-b2a0-462b-b93d-d012ca8148ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{respuesta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

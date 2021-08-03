@@ -1,0 +1,51 @@
+body { padding-top: 200px; }
+
+.contenedor {
+   margin-bottom: 20px;
+    background: #d1e7dd;
+    border:1px solid;    
+}
+
+.countdown-container {
+    padding: 10px;
+    background-color: #ebb671;
+    margin-bottom: 10px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: tomato 2px solid;
+}
+
+.number {
+    font-size: 32px;
+    text-align: center;
+    padding-top: 10px;
+    color: #0f0f0f;
+    background-color: #FCEBDA;
+    
+}
+
+@media only screen and (max-width: 1319px) {
+      body,html { 
+    padding-top: 110px;
+}
+}
+@media only screen and (max-width: 873px) {
+      body,html { 
+    padding-top: 120px;
+}
+}
+@media only screen and (max-width: 767px) {
+      body,html { 
+    padding-top: 150px;
+}
+.container{
+    width: 100% !important;
+}
+}
+@media only screen and (max-width: 508px) {
+      body,html { 
+    padding-top: 160px;
+}
+}
+
